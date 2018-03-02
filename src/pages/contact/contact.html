@@ -1,0 +1,64 @@
+<ion-header no-border>
+  <ion-navbar color="twitter">
+    <ion-title>
+      个人中心
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding text-center>
+    <ion-avatar>
+      <img [src]="user.profileImage">
+    </ion-avatar>
+    <h6>
+      <strong>{{user.name}}</strong>
+      <p>{{user.phonenumber}}</p>
+    </h6>
+  </div>
+
+  <ion-row text-center>
+    <ion-col col-4>
+      <span>{{user.money}} 元</span>
+      <p>余额</p>
+    </ion-col>
+    <ion-col col-4>
+      <span>{{user.quantity}} 张</span>
+      <p>优惠券</p>
+    </ion-col>
+    <ion-col col-4>
+      <span>{{user.card}}</span>
+      <p>徽章</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-item-group>
+    <ion-item-divider color="light">我的</ion-item-divider>
+    <button ion-item (click)="onMessage()">
+      <ion-icon name="chatbubbles" style="color:lightgreen"></ion-icon>
+      消息
+      <ion-badge *ngIf="vm && vm.msgNum>0" item-right color="danger">{{vm.msgNum}}</ion-badge>
+    </button>
+    <button ion-item (click)="onBill()">
+      <ion-icon name="mail" style="color:rgb(100, 100, 100)"></ion-icon>
+      账单
+    </button>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">操作</ion-item-divider>
+    <button ion-item (click)="onInvite()">
+      <ion-icon name="people" style="color:lightblue"></ion-icon>
+      邀请朋友
+    </button>
+    <button ion-item (click)="onBind()">
+      <ion-icon name="car" style="color:lightcoral"></ion-icon>
+      绑定车牌
+    </button>
+    <button ion-item navPush="SettingPage">
+      <ion-icon name="settings" style="color:dimgray"></ion-icon>
+      设置
+    </button>
+  </ion-item-group>
+  
+</ion-content>
