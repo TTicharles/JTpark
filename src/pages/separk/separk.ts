@@ -18,8 +18,10 @@ export class SeparkPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeparkPage');
   }
-
+  
 }
