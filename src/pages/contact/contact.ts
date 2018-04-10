@@ -9,7 +9,6 @@ export class ContactPage {
   user: any = {
     name: '李先生',
     profileImage: 'assets/imgs/user.jpg',
-    phonenumber: '18874483716',
     money: '0.0',
     quantity: '3',
     card: '停车新秀'
@@ -19,8 +18,14 @@ export class ContactPage {
     msgNum: 3
   };
 
+  phonenumber:string= "";
+
   constructor(public navCtrl: NavController) {
 
+  }
+
+  ionViewWillEnter() {
+    this.phonenumber = window.localStorage.getItem('username');
   }
 
   ionViewDidLoad() {

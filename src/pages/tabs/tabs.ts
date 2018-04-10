@@ -7,11 +7,20 @@ import { HomePage } from '../home/home';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
-  tab1Root = HomePage;
-  tab2Root = ContactPage;
+  tabRoots : Object[];
 
   constructor() {
-
+      this.tabRoots=[
+        {
+            root : HomePage,
+            tabTitle : '主页',
+            tabIcon : 'home'
+        },
+        {
+          root : ContactPage,
+          tabTitle : '我的',
+          tabIcon : 'person'
+        }
+      ];
   }
 }

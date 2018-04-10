@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the SettingPage page.
  *
@@ -23,6 +23,7 @@ export class SettingPage {
   }
 
   logOut(){
-    
+      window.localStorage.removeItem('username');
+      this.navCtrl.setRoot(LoginPage);
   }
 }
